@@ -1,0 +1,57 @@
+#listas
+
+nombreslista = ["Guille", "Ale", "Fran", "Esteban", "Abuela", "Abuelo"]
+
+nombresdecuidadeslista  = ["Cordoba", "La Plata", "Santafe", "rosario"]
+
+fecha_nombre_eventoslista = ["24/12/2023 Navidad","31/11/2023 Halloween", 
+                            "1/1/2024 Año Nuevo", "6/1/2024 Reyes mMgos"]
+
+valordetemperaturalista = ["23°/3°", "28°/12°", "26°/10°", "29°/13°","19°/9°",
+                           "16°/8°", "13°/10°", "22°/9°", "16°/9°", "14°/9°",
+                           "11°/8°", "9°/5°", "18°/2°", "17°/-3°", "16°/-2°",
+                           "13°/1°", "10°/5°", "16°/3°", "16°/4°", "24°/2°",
+                           "32°/3°", "22°/9°", "15°/9°", "16°/3°", "16°/3°",
+                           "19°/3°", "21°/1°", "22°/1°", "31°/3°", "28°/5°",
+                           "28°/7°"] #mes de julio
+
+nombreslista.sort()
+print(nombreslista)
+
+valordetemperaturalista.sort()
+print(valordetemperaturalista)
+
+valordetemperaturalista.append(["35°/11°", "30°/11°", "20°/5°", "23°/3°", "23°/7°", "26°/5°", "17°/4°", "18°/2°", "20°/-1°", "27°/8°", "17°/4°", "18°/4°", "25°/5°", "32°/11°", "33°/12°"])
+print(valordetemperaturalista)
+
+
+nombreslista.remove("Abuela")
+nombreslista.remove("Abuelo")
+print(nombreslista)
+
+nombresdecuidadeslista.remove("rosario")
+print(nombresdecuidadeslista)
+
+listas = nombreslista + nombresdecuidadeslista + fecha_nombre_eventoslista +valordetemperaturalista
+print(listas)
+
+#tuplas
+
+tuplas1 = (1, 2, 3, 4, "cinco")
+print(tuplas1)
+
+tuplas2 = (6, 7, 8, 9, "diez")
+print(tuplas2)
+
+tuplas3 = (11, 12, 13, 14, "quince")
+print(tuplas3)
+
+listadetuplas = tuplas1 + tuplas2 + tuplas3
+
+print(listadetuplas)
+
+#diccionario
+
+dnidiccionario = {26543120: "Ale", 26543121: "Guille", 26543122: "Fran", 26543123: "Esteban", 26543100: "Abuelo", 26543101: "abuela", 26543150: "Tio", 26543151: "Tia", 26543124: "Primo", 26543125: "Prima"}
+
+>>>dnidiccionario {26543120}
