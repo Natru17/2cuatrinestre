@@ -1,0 +1,43 @@
+#ejercicio 1
+def ejercicio_1():
+    numero = int(input("Ingrese un número: "))
+    if numero == 10:
+        print("¡Usted ha ganado el sorteo!")
+
+def ejercicio_2():
+    numero = int(input("Ingrese un número: "))
+    if numero == 10:
+        print("¡Usted ha ganado el sorteo!")
+    elif numero < 10:
+        print("¡Falto un poco, seguí participando!")
+    else:
+        print("¡Te pasaste, a seguir intentando!")
+
+def ejercicio_3():
+    dia = input("Ingrese un día de la semana: ")
+    if dia.lower() == "lunes":
+        print("¡Ánimo, es el inicio de la semana!")
+    elif dia.lower() == "viernes":
+        print("¡Por fin es viernes, buen fin de semana!")
+    elif dia.lower() == "sábado" or dia.lower() == "domingo":
+        print("¡Disfruta del fin de semana!")
+    else:
+        print("Ese día no es parte de la semana o está mal escrito.")
+
+def ejercicio_4():
+    letra = input("Ingrese una letra: ")
+    if letra.lower() in ["a", "e", "i", "o", "u"]:
+        print("Es vocal")
+
+# Main program
+opcion = int(input("Elija un ejercicio (1-4): "))
+if opcion == 1:
+    ejercicio_1()
+elif opcion == 2:
+    ejercicio_2()
+elif opcion == 3:
+    ejercicio_3()
+elif opcion == 4:
+    ejercicio_4()
+else:
+    print("Opción inválida.")
