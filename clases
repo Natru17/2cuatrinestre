@@ -1,0 +1,92 @@
+class Curso:
+    def __init__(self, fecha_comienzo, titulo, descripcion, objetivos, programa, costo, duracion_meses, foto, estado, categoria):
+        self.fecha_comienzo = fecha_comienzo
+        self.titulo = titulo
+        self.descripcion = descripcion
+        self.objetivos = objetivos
+        self.programa = programa
+        self.costo = costo
+        self.duracion_meses = duracion_meses
+        self.foto = foto
+        self.estado = estado
+        self.categoria = categoria
+        self.clases = []
+
+    def agregar_clase(self, clase):
+        self.clases.append(clase)
+
+
+class Clase:
+    def __init__(self, fecha, titulo, contenido, url_drive):
+        self.fecha = fecha
+        self.titulo = titulo
+        self.contenido = contenido
+        self.url_drive = url_drive
+
+
+class Docente:
+    def __init__(self, apellido, nombre, dni, fecha_nacimiento, direccion, localidad, codigo_postal, provincia, telefono_celular, email):
+        self.apellido = apellido
+        self.nombre = nombre
+        self.dni = dni
+        self.fecha_nacimiento = fecha_nacimiento
+        self.direccion = direccion
+        self.localidad = localidad
+        self.codigo_postal = codigo_postal
+        self.provincia = provincia
+        self.telefono_celular = telefono_celular
+        self.email = email
+
+
+class UsuarioFinal:
+    def __init__(self, nombre, apellido, dni, fecha_nacimiento, direccion, localidad, codigo_postal, provincia, telefono_celular, email, clave):
+        self.nombre = nombre
+        self.apellido = apellido
+        self.dni = dni
+        self.fecha_nacimiento = fecha_nacimiento
+        self.direccion = direccion
+        self.localidad = localidad
+        self.codigo_postal = codigo_postal
+        self.provincia = provincia
+        self.telefono_celular = telefono_celular
+        self.email = email
+        self.clave = clave
+        self.estado = "Activo"
+
+    def validar_email(self):
+        return True
+
+
+class Administrador(UsuarioFinal):
+    def __init__(self, nombre, apellido, dni, fecha_nacimiento, direccion, localidad, codigo_postal, provincia, telefono_celular, email, clave):
+        super().__init__(nombre, apellido, dni, fecha_nacimiento, direccion, localidad, codigo_postal, provincia, telefono_celular, email, clave)
+
+
+class Docente(UsuarioFinal):
+    def __init__(self, nombre, apellido, dni, fecha_nacimiento, direccion, localidad, codigo_postal, provincia, telefono_celular, email, clave):
+        super().__init__(nombre, apellido, dni, fecha_nacimiento, direccion, localidad, codigo_postal, provincia, telefono_celular, email, clave)
+
+
+class CarritoDeCompras:
+    def __init__(self, usuario_final):
+        self.usuario_final = usuario_final
+        self.items = []
+
+    def agregar_item(self, curso):
+        self.items.append(curso)
+
+    def confirmar_compra(self):
+        pass
+
+
+class Compra:
+    def __init__(self, fecha, usuario_final, monto_total):
+        self.fecha = fecha
+        self.usuario_final = usuario_final
+        self.monto_total = monto_total
+
+
+class EmailService:
+    @staticmethod
+    def enviar_correo_validacion(email):
+        pass
