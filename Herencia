@@ -1,0 +1,81 @@
+from enum import Enum
+
+class TipoMedioContacto(Enum):
+    WHATSAPP = "WhatsApp"
+    CORREO_ELECTRONICO = "Correo electrónico"
+    CALL_CENTER = "Call center"
+    REFERIDO_INTERNO = "Referido interno"
+
+class MedioContacto:
+    def __init__(self, id_medio_contacto, fecha, email, telefono, direccion, nombre):
+        self.id_medio_contacto = id_medio_contacto
+        self.fecha = fecha
+        self.email = email
+        self.telefono = telefono
+        self.direccion = direccion
+        self.nombre = nombre
+
+class Usuario:
+    def __init__(self, nombre, apellido, dni, fecha_nacimiento, direccion, localidad, codigo_postal, provincia, telefono_celular, email, clave, estado="Activo"):
+        self.nombre = nombre
+        self.apellido = apellido
+        self.dni = dni
+        self.fecha_nacimiento = fecha_nacimiento
+        self.direccion = direccion
+        self.localidad = localidad
+        self.codigo_postal = codigo_postal
+        self.provincia = provincia
+        self.telefono_celular = telefono_celular
+        self.email = email
+        self.clave = clave
+        self.estado = estado
+
+    def validar_email(self):
+        return True
+
+class Administrador(Usuario):
+    pass
+
+class Docente(Usuario):
+    pass
+
+class CarritoDeCompras:
+    def __init__(self, usuario_final):
+        self.usuario_final = usuario_final
+        self.items = []
+
+    def agregar_item(self, curso):
+        self.items.append(curso)
+
+    def confirmar_compra(self):
+        pass
+
+class Compra:
+    def __init__(self, id_compra, id_carrito_compra, id_medios_pago, id_usuario, fecha, monto_total):
+        self.id_compra = id_compra
+        self.id_carrito_compra = id_carrito_compra
+        self.id_medios_pago = id_medios_pago
+        self.id_usuario = id_usuario
+        self.fecha = fecha
+        self.monto_total = monto_total
+
+class EmailService:
+    @staticmethod
+    def enviar_correo_validacion(email):
+        pass
+
+# Ejemplo de uso de las clases
+docente1 = Docente("Nombre", "Apellido", "12345678", "01/01/1990", "Dirección", "Localidad", "12345", "Provincia", "1234567890", "docente@email.com", "clave123")
+admin1 = Administrador("Admin", "AdminApellido", "87654321", "02/02/1980", "AdminDirección", "AdminLocalidad", "54321", "AdminProvincia", "9876543210", "admin@email.com", "adminclave")
+
+# Ejemplo de uso del enum TipoMedioContacto
+tipo_medio = TipoMedioContacto.WHATSAPP
+
+# Ejemplo de uso de la clase MedioContacto
+medio_contacto = MedioContacto(1, "01/09/2023", "contacto@email.com", "1234567890", "Dirección de contacto", "Contacto")
+
+# Ejemplo de uso de la clase Compra
+compra = Compra(1, 1, 1, 1, "01/09/2023", 100.0)
+
+# Ejemplo de uso de la clase EmailService
+EmailService.enviar_correo_validacion("correo_validacion@email.com")
